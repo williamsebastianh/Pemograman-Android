@@ -11,6 +11,6 @@
         android:id="@+id/tabSatu"
         android:layout_width="398dp"
         android:layout_height="602dp"
-        android:text="Hello satu" />
+        android:text="Hello satu " />
 
 </FrameLayout>

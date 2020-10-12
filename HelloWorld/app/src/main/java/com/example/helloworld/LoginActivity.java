@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(txtPassword.getText().toString().equals("admin") && txtUsername.getText().toString().equals("admin")){
                     Intent i = new Intent( LoginActivity.this, HomeActivity.class);
-                    Toast.makeText(getApplicationContext(), "Selamat Datang"+ txtUsername.getText(),   Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Selamat Datang "+ txtUsername.getText(),   Toast.LENGTH_LONG).show();
                     startActivity(i);
                 }else{
                     Toast.makeText(getApplicationContext(),"Mohon Maaf Tidak Mengetahui "+ txtUsername.getText(), Toast.LENGTH_LONG).show();
