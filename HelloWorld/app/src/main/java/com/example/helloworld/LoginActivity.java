@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         txtUsername = findViewById(R.id.txtUsername);
         txtPassword = findViewById(R.id.txtPassword);
         btnlogin = findViewById(R.id.btnlogin);
@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
 
             public void onClick(View v) {
                 if(txtPassword.getText().toString().equals("admin") && txtUsername.getText().toString().equals("admin")){
-                    Intent i = new Intent( LoginActivity.this,MainActivity2.class);
+                    Intent i = new Intent( LoginActivity.this, HomeActivity.class);
                     Toast.makeText(getApplicationContext(), "Selamat Datang"+ txtUsername.getText(),   Toast.LENGTH_LONG).show();
                     startActivity(i);
                 }else{
