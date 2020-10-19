@@ -1,4 +1,4 @@
-#Thu Oct 15 17:30:08 ICT 2020
+#Mon Oct 19 13:42:16 ICT 2020
 base.0=C\:\\Users\\hp\\AndroidStudioProjects\\Pemograman-Android\\Pemograman-Android\\HelloWorld\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

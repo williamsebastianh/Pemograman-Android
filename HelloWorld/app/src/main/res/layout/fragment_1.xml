@@ -7,10 +7,12 @@
     tools:context=".Fragment1">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:id="@+id/tabSatu"
         android:layout_width="398dp"
-        android:layout_height="602dp"
-        android:text="Hello satu " />
+        android:layout_height="602dp" />
+
+
 
 </FrameLayout>

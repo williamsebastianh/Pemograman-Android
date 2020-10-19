@@ -70,5 +70,9 @@
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\Pemograman-Android\\Pemograman-Android\\HelloWorld\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\Pemograman-Android\\Pemograman-Android\\HelloWorld\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\Pemograman-Android\\Pemograman-Android\\HelloWorld\\app\\build\\intermediates\\res\\merged\\debug\\drawable_iconwifi.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\Pemograman-Android\\Pemograman-Android\\HelloWorld\\app\\src\\main\\res\\drawable\\iconwifi.xml"
     }
 ]
