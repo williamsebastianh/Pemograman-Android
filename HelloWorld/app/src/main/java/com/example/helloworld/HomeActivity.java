@@ -74,6 +74,19 @@ public class HomeActivity extends AppCompatActivity {
         unregisterReceiver(wifiStateReceiver);
     }
 
+    public void notifOn (String message, Context context){
+        String CHANNEL_ID = "MY_NOTIF";
+        NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, "MY channel", NotificationManager.IMPORTANCE_HIGH);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.createNotificationChannel(mChannel);
+        Notification notification = new NotificationCompat.Builder(HomeActivity.this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.iconwifi)
+                .setContentTitle("STATUS WIFI")
+                .setContentText(message)
+                .build();
+        int notificationID = 0;
+        notificationManager.notify(notificationID, notification);
+    }
 
     private BroadcastReceiver wifiStateReceiver = new BroadcastReceiver() {
         @Override
@@ -85,43 +98,19 @@ public class HomeActivity extends AppCompatActivity {
 
                     swi.setChecked(true);
                     swi.setText("WIFI ON");
+                    notifOn("WIFI ON",context);
                     break;
                 case WifiManager.WIFI_STATE_DISABLED:
                     swi.setChecked(false);
                     swi.setText("WIFI OFF");
-
+                    notifOn("WIFI OFF",context);
                     break;
 
             }
 
 
-            if (swi.getText().toString().equals("WIFI ON")) {
-                String CHANNEL_ID = "MY_NOTIF";
-                NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, "MY channel", NotificationManager.IMPORTANCE_HIGH);
-                NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                notificationManager.createNotificationChannel(mChannel);
-                Notification notification = new NotificationCompat.Builder(HomeActivity.this, CHANNEL_ID)
-                        .setSmallIcon(R.drawable.iconwifi)
-                        .setContentTitle("STATUS WIFI")
-                        .setContentText("WIFI MENYALA")
-                        .build();
-                int notificationID = 0;
-                notificationManager.notify(notificationID, notification);
-            } else if (swi.getText().toString().equals("WIFI OFF")) {
-                String CHANNEL_ID = "MY_NOTIF";
-                NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, "MY channel", NotificationManager.IMPORTANCE_HIGH);
-                NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                notificationManager.createNotificationChannel(mChannel);
-                Notification notification = new NotificationCompat.Builder(HomeActivity.this, CHANNEL_ID)
-                        .setSmallIcon(R.drawable.iconwifi)
-                        .setContentTitle("STATUS WIFI")
-                        .setContentText("WIFI MATI")
-                        .build();
-                int notificationID = 0;
-                notificationManager.notify(notificationID, notification);
-
-            }
         }
+
     };
 
     private void BroadcastRec() {
