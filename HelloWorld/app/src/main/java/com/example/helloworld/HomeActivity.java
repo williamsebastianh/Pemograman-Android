@@ -105,7 +105,6 @@ public class HomeActivity extends AppCompatActivity {
                     swi.setText("WIFI OFF");
                     notifOn("WIFI OFF",context);
                     break;
-
             }
 
 
