@@ -18,7 +18,7 @@ import android.widget.Switch;
  * A simple {@link Fragment} subclass.
 
  */
-public class Fragment1 extends Fragment{
+public class Fragment1 extends Fragment {
 
 
 
