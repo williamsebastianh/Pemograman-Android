@@ -2,9 +2,16 @@ package com.example.helloworld;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+
+//import android.apprecyclerview.widget.LinearLayoutManager;
+//import android.recyclerview.widget.RecyclerView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +28,8 @@ public class Fragment2 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    RecyclerView recyclerView;
+    ArrayList<Datamodel> dataholder;
 
     public Fragment2() {
         // Required empty public constructor
@@ -32,7 +41,7 @@ public class Fragment2 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment2.
+     * @return A new instance of fragment Fragmentdua.
      */
     // TODO: Rename and change types and number of parameters
     public static Fragment2 newInstance(String param1, String param2) {
@@ -57,6 +66,24 @@ public class Fragment2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_2, container, false);
+        View view=inflater.inflate(R.layout.fragment_2, container, false);
+        recyclerView=view.findViewById(R.id.listfilm);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        dataholder=new ArrayList<>();
+        Datamodel ob1=new Datamodel(R.drawable.tigaenam,"Ant-Man","FILM ini berjudul ANTMAN");
+        dataholder.add(ob1);
+        Datamodel ob2=new Datamodel(R.drawable.alpha,"AVENGER-Infinity_War"," FILM berjudul AVENGERS INFINITY WAR");
+        dataholder.add(ob2);
+        Datamodel ob3=new Datamodel(R.drawable.download,"AVENGER-Infinity_War"," FILM berjudul download");
+        dataholder.add(ob3);
+        Datamodel ob4=new Datamodel(R.drawable.extraction,"AVENGER-Infinity_War"," FILM berjudul extraction");
+        dataholder.add(ob4);
+        Datamodel ob5=new Datamodel(R.drawable.fractured,"AVENGER-Infinity_War"," FILM berjudul fractured");
+        dataholder.add(ob5);
+        Datamodel ob6=new Datamodel(R.drawable.hitmant,"AVENGER-Infinity_War"," FILM berjudul hirmant");
+        dataholder.add(ob6);
+
+        recyclerView.setAdapter(new MAdap(dataholder));
+        return view;
     }
 }
