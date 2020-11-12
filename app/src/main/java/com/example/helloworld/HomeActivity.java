@@ -9,35 +9,54 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.wifi.WifiManager;
 import android.os.Build;
+import android.os.Bundle;
 import android.provider.Settings;
-import android.se.omapi.Channel;
 import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.NotificationBuilderWithBuilderAccessor;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
-import static android.app.NotificationChannel.DEFAULT_CHANNEL_ID;
-
 public class HomeActivity extends AppCompatActivity {
-
+    private SharedPrefManager sharedPreferenceConfig;
     private Switch swi;
     private WifiManager wm;
+    private Button button;
+    SharedPrefManager sharedPrefManager;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+       // sharedPreferenceConfig=new SharedPreferenceConfig(getApplicationContext());
 
         TabLayout tabLayout = findViewById(R.id.tablayout);
         TabItem tabSatu = findViewById(R.id.tabSatu);
         TabItem tabDua = findViewById(R.id.tabDua);
         final ViewPager viewPager = findViewById(R.id.viewPager);
+        sharedPrefManager = new SharedPrefManager(this);
+
+        button=findViewById(R.id.keluar);
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, false);
+                startActivity(new Intent(HomeActivity.this, LoginActivity.class)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+                finish();
+
+            }
+        });
+
+
 
         PagerAdapter pageAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pageAdapter);
@@ -62,6 +81,9 @@ public class HomeActivity extends AppCompatActivity {
         swi = findViewById(R.id.wifiswi);
         BroadcastRec();
     }
+
+
+
 
     protected void onStart() {
         super.onStart();
