@@ -8,7 +8,7 @@
     tools:context=".Fragment1"
     android:gravity="center_vertical"
     android:orientation="vertical"
-     >
+    android:id="@+id/frame_content" >
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -17,18 +17,16 @@
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         >
-
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/mulai"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="mulai" />
-
+            android:text="Mulai"/>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/cancel"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="cancel"/>
+            android:text="Cancel"/>
     </LinearLayout>
 
 
