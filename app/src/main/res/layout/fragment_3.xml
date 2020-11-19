@@ -8,12 +8,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:text="No Mhs : "
+            android:text="No Mhs: "
             android:layout_weight="0.5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/noMhs"
+            android:inputType="number"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
@@ -22,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:text="Nama Mhs : "
+            android:text="Nama Mhs: "
             android:layout_weight="0.5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
@@ -36,12 +37,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:text="Phone : "
+            android:text="Phone: "
             android:layout_weight="0.5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/phoneMhs"
+            android:inputType="number"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
