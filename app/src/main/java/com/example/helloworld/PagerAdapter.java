@@ -1,10 +1,14 @@
 package com.example.helloworld;
 
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+//import android.support.v4.app.Fragment;
+//import android.support.v4.app.FragmentManager;
+//import android.support.v4.app.FragmentPagerAdapter;
 
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 public class PagerAdapter extends FragmentPagerAdapter {
 
@@ -24,6 +28,10 @@ public class PagerAdapter extends FragmentPagerAdapter {
                 return new Fragment1();
             case 1:
                 return new Fragment2();
+            case 2:
+                return new Fragment3();
+            case 3:
+                return new Fragment4();
 
             default:
                 return null;

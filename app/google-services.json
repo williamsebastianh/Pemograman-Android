@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "143877582221",
+    "firebase_url": "https://datamahasiswa-d2be8.firebaseio.com",
+    "project_id": "datamahasiswa-d2be8",
+    "storage_bucket": "datamahasiswa-d2be8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:143877582221:android:73c2f7ac81b6c1efdfa1c4",
+        "android_client_info": {
+          "package_name": "com.example.helloworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "143877582221-nd1b8cbgbsvrivvpr9ed3mespintfsrj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHFlDMU09s-F8hS-2Vaq54Z5egWr7_jXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "143877582221-nd1b8cbgbsvrivvpr9ed3mespintfsrj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

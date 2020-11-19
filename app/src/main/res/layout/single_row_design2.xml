@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    android:elevation="4dp"
+    app:cardUseCompatPadding="true"
+    android:clickable="true"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:gravity="center_vertical"
+            android:text="Data mahasiswa"
+            android:textColor="#000"
+            android:textSize="25dp"
+           />
+        <TextView
+            android:id="@+id/nim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:text="Description text"
+            android:textSize="15dp"
+            android:layout_below="@id/nama"/>
+
+        <TextView
+            android:id="@+id/nohp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:text="Description text"
+            android:textSize="15dp"
+            android:layout_below="@id/nim"/>
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nohp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_vertical"
+            android:text="Delete" />
+        <Button
+            android:id="@+id/update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/delete"
+            android:layout_below="@id/nohp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_vertical"
+            android:text="Update" />
+
+
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

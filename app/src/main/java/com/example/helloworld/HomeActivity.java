@@ -1,5 +1,7 @@
+
 package com.example.helloworld;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -11,36 +13,50 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.design.widget.TabItem;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.design.widget.TabItem;
+//import android.support.design.widget.TabLayout;
+//import android.support.v4.app.NotificationCompat;
+//import android.support.v4.view.ViewPager;
+//import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
 
 public class HomeActivity extends AppCompatActivity {
     private SharedPrefManager sharedPreferenceConfig;
     private Switch swi;
     private WifiManager wm;
     private Button button;
+    private Button button1;
     SharedPrefManager sharedPrefManager;
 
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-       // sharedPreferenceConfig=new SharedPreferenceConfig(getApplicationContext());
+        sharedPreferenceConfig=new SharedPrefManager(getApplicationContext());
+        //sharedPreferenceConfig=new Sha redPreferenceConfig(getApplicationContext());
 
         TabLayout tabLayout = findViewById(R.id.tablayout);
         TabItem tabSatu = findViewById(R.id.tabSatu);
         TabItem tabDua = findViewById(R.id.tabDua);
+        TabItem tabTiga = findViewById(R.id.tabTiga);
+        TabItem tabEmpat = findViewById(R.id.tabEmpat);
         final ViewPager viewPager = findViewById(R.id.viewPager);
         sharedPrefManager = new SharedPrefManager(this);
 
+//        button1=findViewById(R.id.pindah);
+       // button1.setOnClickListener();
         button=findViewById(R.id.keluar);
 
 
@@ -55,6 +71,7 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
+
 
 
 
@@ -77,6 +94,8 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
+
+
 
         swi = findViewById(R.id.wifiswi);
         BroadcastRec();
@@ -163,3 +182,8 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 }
+
+
+
+
+
