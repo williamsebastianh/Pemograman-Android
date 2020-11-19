@@ -38,7 +38,6 @@
         android:layout_height="wrap_content">
         <TextView
             android:text="Phone : "
-            android:inputType="number"
             android:layout_weight="0.5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
