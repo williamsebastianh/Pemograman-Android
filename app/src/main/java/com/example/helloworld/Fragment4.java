@@ -1,5 +1,7 @@
 package com.example.helloworld;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +43,11 @@ public class Fragment4 extends Fragment {
     private String mParam1;
     private String mParam2;
     private FirestoreRecyclerAdapter adapter;
+    private FirebaseFirestore firebaseFirestoreDb;
+    private EditText noMhs;
+    private EditText namaMhs;
+    private EditText phoneMhs;
+
 
     /**
      * Use this factory method to create a new instance of
@@ -94,10 +103,33 @@ public class Fragment4 extends Fragment {
             }
 
             @Override
-            protected void onBindViewHolder(@NonNull MahasiswaViewHolder holder, int position, @NonNull Mahasiswa model) {
+            protected void onBindViewHolder(@NonNull final MahasiswaViewHolder holder, int position, @NonNull Mahasiswa model) {
                 holder.nama.setText(model.getNama());
                 holder.nim.setText(model.getNim());
                 holder.nohp.setText(model.getPhone());
+
+
+                /////////////////////Delete////////////////////////////////
+
+                holder.delete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        firebaseFirestoreDb.collection("DaftarMhs").document()
+                                .delete()
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        noMhs.setText("");
+                                        namaMhs.setText("");
+                                        phoneMhs.setText("");
+                                        Toast.makeText(requireActivity(), "Mahasiswa berhasil dihapus",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+
+                    }
+                });
+                ////////////////////////////////////////////////////////////////////////////////
             }
         };
         mFirestoreList.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -109,12 +141,16 @@ public class Fragment4 extends Fragment {
         private TextView nama;
         private TextView nim;
         private TextView nohp;
+        private Button delete,update;
         public MahasiswaViewHolder(@NonNull View itemView) {
             super(itemView);
 
             nama = itemView.findViewById(R.id.nama);
             nim = itemView.findViewById(R.id.nim);
             nohp = itemView.findViewById(R.id.nohp);
+
+            delete=itemView.findViewById(R.id.delete);
+            update=itemView.findViewById(R.id.update);
 
         }
 

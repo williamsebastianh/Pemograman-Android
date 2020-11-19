@@ -47,7 +47,7 @@
             android:layout_below="@id/nim"/>
 
         <Button
-            android:id="@+id/btndelete"
+            android:id="@+id/delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/nohp"
@@ -55,10 +55,10 @@
             android:gravity="center_vertical"
             android:text="Delete" />
         <Button
-            android:id="@+id/btnupdate"
+            android:id="@+id/update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/btndelete"
+            android:layout_toRightOf="@+id/delete"
             android:layout_below="@id/nohp"
             android:layout_marginTop="0dp"
             android:gravity="center_vertical"

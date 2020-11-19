@@ -1,5 +1,7 @@
 package com.example.helloworld;
 
+import android.content.Context;
+
 public class Mahasiswa {
     private String nim;
     private String nama;
@@ -9,11 +11,18 @@ public class Mahasiswa {
 
     }
 
+    public static Mahasiswa newMahasiswa(Context context) {
+
+        return null;
+    }
+
     public Mahasiswa(String nim, String nama, String phone) {
         this.nim = nim;
         this.nama = nama;
         this.phone = phone;
     }
+
+
 
 
     public String getNama() {
