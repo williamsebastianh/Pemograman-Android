@@ -183,6 +183,38 @@ public class Fragment3 extends Fragment {
                 });
     }
 
+//    private void updateDataMahasiswa() {
+//        Mahasiswa mhs = new Mahasiswa(namaMhs.getText().toString(),
+//                phoneMhs.getText().toString(),
+//                noMhs.getText().toString());
+//        getDb().collection("DaftarMhs").document(namaMhs.getText().toString())
+//                .update("nama",mhs.getNama()
+//                        ,"nim",mhs.getNim()
+//                        ,"phone",mhs.getPhone())
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void aVoid) {
+//                        try {
+//                            noMhs.setText("");
+//                            namaMhs.setText("");
+//                            phoneMhs.setText("");
+//                            Toast.makeText(requireActivity(), "Mahasiswa berhasil Diupdate",
+//                                    Toast.LENGTH_SHORT).show();
+//                            Thread.sleep(2000);
+//                            Dashboard.getViewPager().setCurrentItem(1);
+//                        } catch (InterruptedException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(requireActivity(), "Error deleting document: " + e.getMessage(),
+//                                Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//    }
 
 
 }
