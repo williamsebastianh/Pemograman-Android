@@ -1,9 +1,12 @@
 package com.example.helloworld;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,9 +16,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.zip.Inflater;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +39,8 @@ public class Fragment3 extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    RecyclerView listdata;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -41,6 +53,8 @@ public class Fragment3 extends Fragment {
     private Button buttonHapus;
 
     private FirebaseFirestore firebaseFirestoreDb;
+   // FirebaseDatabase database;
+
 
 
     public Fragment3() {
@@ -56,7 +70,10 @@ public class Fragment3 extends Fragment {
      * @return A new instance of fragment Fragment3.
      */
     // TODO: Rename and change types and number of parameters
+
     public static Fragment3 newInstance(String param1, String param2) {
+
+
         Fragment3 fragment = new Fragment3();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
@@ -65,6 +82,7 @@ public class Fragment3 extends Fragment {
         return fragment;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +90,9 @@ public class Fragment3 extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
     }
 
     @Override
@@ -83,7 +104,7 @@ public class Fragment3 extends Fragment {
         namaMhs = view.findViewById(R.id.namaMhs);
         phoneMhs = view.findViewById(R.id.phoneMhs);
         buttonSimpan = view.findViewById(R.id.simpanButton);
-        buttonHapus = view.findViewById(R.id.hapusButton);
+       // buttonHapus = view.findViewById(R.id.hapusButton);
 
         firebaseFirestoreDb = FirebaseFirestore.getInstance();
 
@@ -93,15 +114,20 @@ public class Fragment3 extends Fragment {
                 //sanity check
                 if (!noMhs.getText().toString().isEmpty() && !namaMhs.getText().toString().isEmpty()) {
                     tambahMahasiswa();
+
                 } else {
                     Toast.makeText(requireActivity(), "No dan Nama Mhs tidak boleh kosong",
                             Toast.LENGTH_SHORT).show();
                 }
             }
         });
+       
         return view;
 
-    }
+        }
+
+
+
 
     private void tambahMahasiswa() {
 
@@ -126,5 +152,10 @@ public class Fragment3 extends Fragment {
                     }
                 });
     }
+
+
+
+
+
 
 }

@@ -33,6 +33,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tiga" />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabEmpat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Empat" />
 
 
 
@@ -49,6 +54,13 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/wifiswi"
         android:text="Logout" />
+<!--    <Button-->
+<!--        android:id="@+id/pindah"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_toRightOf="@+id/wifiswi"-->
+<!--        android:text="Logout" />-->
+
 
 
     <androidx.viewpager.widget.ViewPager

@@ -5,11 +5,16 @@ public class Mahasiswa {
     private String nama;
     private String phone;
 
+    public Mahasiswa(){
+
+    }
+
     public Mahasiswa(String nim, String nama, String phone) {
         this.nim = nim;
         this.nama = nama;
         this.phone = phone;
     }
+
 
     public String getNama() {
         return nama;

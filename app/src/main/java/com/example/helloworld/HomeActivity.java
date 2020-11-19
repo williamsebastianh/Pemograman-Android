@@ -1,6 +1,7 @@
 
 package com.example.helloworld;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -33,10 +34,12 @@ public class HomeActivity extends AppCompatActivity {
     private SharedPrefManager sharedPreferenceConfig;
     private Switch swi;
     private WifiManager wm;
-    private Button button,button1;
+    private Button button;
+    private Button button1;
     SharedPrefManager sharedPrefManager;
 
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +51,12 @@ public class HomeActivity extends AppCompatActivity {
         TabItem tabSatu = findViewById(R.id.tabSatu);
         TabItem tabDua = findViewById(R.id.tabDua);
         TabItem tabTiga = findViewById(R.id.tabTiga);
+        TabItem tabEmpat = findViewById(R.id.tabEmpat);
         final ViewPager viewPager = findViewById(R.id.viewPager);
         sharedPrefManager = new SharedPrefManager(this);
 
+//        button1=findViewById(R.id.pindah);
+       // button1.setOnClickListener();
         button=findViewById(R.id.keluar);
 
 
@@ -66,19 +72,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-//        button1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//
-//                startActivity(new Intent(HomeActivity.this,MainActivity.class));
-//
-//
-//            }
-//        });
 
 
 
@@ -101,6 +94,8 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
+
+
 
         swi = findViewById(R.id.wifiswi);
         BroadcastRec();
