@@ -47,6 +47,7 @@ public class Fragment4 extends Fragment {
     private EditText noMhs;
     private EditText namaMhs;
     private EditText phoneMhs;
+    private Button button;
 
 
     /**
@@ -114,7 +115,7 @@ public class Fragment4 extends Fragment {
                 holder.delete.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        firebaseFirestoreDb.collection("DaftarMhs").document()
+                        firebaseFirestoreDb.collection("DaftarMhs").document(namaMhs.getText().toString())
                                 .delete()
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
@@ -122,7 +123,15 @@ public class Fragment4 extends Fragment {
                                         noMhs.setText("");
                                         namaMhs.setText("");
                                         phoneMhs.setText("");
+
                                         Toast.makeText(requireActivity(), "Mahasiswa berhasil dihapus",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(requireActivity(), "Error deleting document: " + e.getMessage(),
                                                 Toast.LENGTH_SHORT).show();
                                     }
                                 });
@@ -130,6 +139,7 @@ public class Fragment4 extends Fragment {
                     }
                 });
                 ////////////////////////////////////////////////////////////////////////////////
+
             }
         };
         mFirestoreList.setLayoutManager(new LinearLayoutManager(getContext()));

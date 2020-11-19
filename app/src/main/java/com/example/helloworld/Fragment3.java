@@ -135,7 +135,7 @@ public class Fragment3 extends Fragment {
                 namaMhs.getText().toString(),
                 phoneMhs.getText().toString());
 
-        firebaseFirestoreDb.collection("DaftarMhs").document().set(mhs)
+        firebaseFirestoreDb.collection("DaftarMhs").document(namaMhs.getText().toString()).set(mhs)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -155,6 +155,27 @@ public class Fragment3 extends Fragment {
 
 
 
+//    private void deleteDataMahasiswa() {
+//        firebaseFirestoreDb.collection("DaftarMhs").document(namaMhs.getText().toString())
+//                .delete()
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void aVoid) {
+//                        noMhs.setText("");
+//                        namaMhs.setText("");
+//                        phoneMhs.setText("");
+//                        Toast.makeText(requireActivity(), "Mahasiswa berhasil dihapus",
+//                                Toast.LENGTH_SHORT).show();
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(requireActivity(), "Error deleting document: " + e.getMessage(),
+//                                Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//    }
 
 
 
