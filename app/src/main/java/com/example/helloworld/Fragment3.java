@@ -104,7 +104,7 @@ public class Fragment3 extends Fragment {
         namaMhs = view.findViewById(R.id.namaMhs);
         phoneMhs = view.findViewById(R.id.phoneMhs);
         buttonSimpan = view.findViewById(R.id.simpanButton);
-       // buttonHapus = view.findViewById(R.id.hapusButton);
+        buttonHapus = view.findViewById(R.id.hapusButton);
 
         firebaseFirestoreDb = FirebaseFirestore.getInstance();
 
@@ -121,7 +121,13 @@ public class Fragment3 extends Fragment {
                 }
             }
         });
-       
+        buttonHapus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteDataMahasiswa();
+            }
+        });
+
         return view;
 
         }
@@ -155,27 +161,27 @@ public class Fragment3 extends Fragment {
 
 
 
-//    private void deleteDataMahasiswa() {
-//        firebaseFirestoreDb.collection("DaftarMhs").document(namaMhs.getText().toString())
-//                .delete()
-//                .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                    @Override
-//                    public void onSuccess(Void aVoid) {
-//                        noMhs.setText("");
-//                        namaMhs.setText("");
-//                        phoneMhs.setText("");
-//                        Toast.makeText(requireActivity(), "Mahasiswa berhasil dihapus",
-//                                Toast.LENGTH_SHORT).show();
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Toast.makeText(requireActivity(), "Error deleting document: " + e.getMessage(),
-//                                Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//    }
+    private void deleteDataMahasiswa() {
+        firebaseFirestoreDb.collection("DaftarMhs").document(namaMhs.getText().toString())
+                .delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        noMhs.setText("");
+                        namaMhs.setText("");
+                        phoneMhs.setText("");
+                        Toast.makeText(requireActivity(), "Mahasiswa berhasil dihapus",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(requireActivity(), "Error deleting document: " + e.getMessage(),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
 
 
 

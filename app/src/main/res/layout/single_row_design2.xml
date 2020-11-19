@@ -54,16 +54,16 @@
             android:layout_below="@id/nohp"
             android:layout_marginTop="0dp"
             android:gravity="center_vertical"
-            android:text="Delete" />
-        <Button
-            android:id="@+id/update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/delete"
-            android:layout_below="@id/nohp"
-            android:layout_marginTop="0dp"
-            android:gravity="center_vertical"
             android:text="Update" />
+<!--        <Button-->
+<!--            android:id="@+id/update"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--&lt;!&ndash;            android:layout_toRightOf="@+id/delete"&ndash;&gt;-->
+<!--            android:layout_below="@id/nohp"-->
+<!--            android:layout_marginTop="0dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:text="Update" />-->
 
 
 

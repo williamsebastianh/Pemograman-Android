@@ -44,9 +44,9 @@ public class Fragment4 extends Fragment {
     private String mParam2;
     private FirestoreRecyclerAdapter adapter;
     private FirebaseFirestore firebaseFirestoreDb;
-    private EditText noMhs;
-    private EditText namaMhs;
-    private EditText phoneMhs;
+//    private EditText noMhs;
+//    private EditText namaMhs;
+//    private EditText phoneMhs;
     private Button button;
 
 
@@ -84,9 +84,11 @@ public class Fragment4 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_4, container, false);
         mFirestoreList = view.findViewById(R.id.recycler2);
+
         firebaseFirestore = firebaseFirestore.getInstance();
 
         //query
@@ -112,32 +114,13 @@ public class Fragment4 extends Fragment {
 
                 /////////////////////Delete////////////////////////////////
 
-                holder.delete.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        firebaseFirestoreDb.collection("DaftarMhs").document(namaMhs.getText().toString())
-                                .delete()
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        noMhs.setText("");
-                                        namaMhs.setText("");
-                                        phoneMhs.setText("");
+//                button.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                      //  deleteDataMahasiswa();
+//                    }
+//                });
 
-                                        Toast.makeText(requireActivity(), "Mahasiswa berhasil dihapus",
-                                                Toast.LENGTH_SHORT).show();
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(requireActivity(), "Error deleting document: " + e.getMessage(),
-                                                Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-
-                    }
-                });
                 ////////////////////////////////////////////////////////////////////////////////
 
             }
@@ -159,14 +142,35 @@ public class Fragment4 extends Fragment {
             nim = itemView.findViewById(R.id.nim);
             nohp = itemView.findViewById(R.id.nohp);
 
-            delete=itemView.findViewById(R.id.delete);
-            update=itemView.findViewById(R.id.update);
+//            delete=itemView.findViewById(R.id.delete);
+//            update=itemView.findViewById(R.id.update);
 
         }
 
     }
 
 
+//    private void deleteDataMahasiswa() {
+//        firebaseFirestoreDb.collection("DaftarMhs").document("mhs1")
+//                .delete()
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void aVoid) {
+//                        noMhs.setText("");
+//                        namaMhs.setText("");
+//                        phoneMhs.setText("");
+//                        Toast.makeText(requireActivity(), "Mahasiswa berhasil dihapus",
+//                                Toast.LENGTH_SHORT).show();
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(requireActivity(), "Error deleting document: " + e.getMessage(),
+//                                Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//    }
 
 
 
